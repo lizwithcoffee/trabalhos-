@@ -1,13 +1,13 @@
-algoritmo "aula3fibonacci"
-// Função :
+ggialgoritmo "aula3fibonacci"
+// Funï¿½ï¿½o :
 // Autor :
 // Data : 22/11/2024
-// Seção de Declarações 
+// Seï¿½ï¿½o de Declaraï¿½ï¿½es 
 var
    ant, atual, numAux, cont, valor:inteiro
 
 inicio
-// Seção de Comandos
+// Seï¿½ï¿½o de Comandos
    Escreval("Digite um valor para calculo: ", valor)
    Leia(valor)
    ant <- 0
