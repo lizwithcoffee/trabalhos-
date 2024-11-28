@@ -1,22 +1,24 @@
-# faturamento = 1200 # Tipo: int -> número inteiro.
-# custo = 750.32 # Tipo: float -> núemro com casas decimais.
-# lucro = faturamento - custo
+#Faturamento
 
-# margemlucro = lucro/faturamento
+faturamento = 1200 # Tipo: int -> número inteiro.
+custo = 750.32 # Tipo: float -> núemro com casas decimais.
+lucro = faturamento - custo
 
-# print("Faturamento foi de" , faturamento)
-# print("O custo foi de" , custo)
-# print("O lucro foi de" , lucro)
-# print("A margem de lucro foi de" , margemlucro)
+margemlucro = lucro/faturamento
 
-# mensagem = "O faturamento da loja foi de",
-# print(type(mensagem))
-# print("A variável Faturamento é do tipo", type(faturamento))
-# email = "emailqualquer@gmail.com" # Tipo string -> texto str
-# teve_lucro = True # Variável tipo boolean.
-# print(type(teve_lucro))
+print("Faturamento foi de" , faturamento)
+print("O custo foi de" , custo)
+print("O lucro foi de" , lucro)
+print("A margem de lucro foi de" , margemlucro)
 
-# #Mod -> resto da divisão
+mensagem = "O faturamento da loja foi de",
+print(type(mensagem))
+print("A variável Faturamento é do tipo", type(faturamento))
+email = "emailqualquer@gmail.com" # Tipo string -> texto str
+teve_lucro = True # Variável tipo boolean.
+print(type(teve_lucro))
+
+#Mod -> resto da divisão
 print(10 % 3)
 
 tempo_contrato = 250 - 110
