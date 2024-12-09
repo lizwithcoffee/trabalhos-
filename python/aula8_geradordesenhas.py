@@ -54,38 +54,38 @@ class PasswordGeneratorApp(ctk.CTk):
         self.theme_switch = ctk.CTkSwitch(self, text="Tema Claro/Escuro", command=self.toggle_theme)
         self.theme_switch.pack(pady=10)
 
-def generate_password(self):
-    # Critérios de geração de senha
-    characters = ""
-    if self.include_numbers.get():
-        characters += string.digits
-    if self.include_letters.get ():
-        characters += string.ascii_letters
-    if self.include_symbols.get():
-        characters += string.punctuation
+    def generate_password(self):
+        # Critérios de geração de senha
+        characters = ""
+        if self.include_numbers.get():
+            characters += string.digits
+        if self.include_letters.get():
+            characters += string.ascii_letters
+        if self.include_symbols.get():
+            characters += string.punctuation
 
-    if not characters:
-        self.password_entry.delete(0,"end")
-        self.password_entry.insert(0, "Selecione ao menos um critério")
-        return
-    
-    # Gerar senha aleatória
-    password = "".join(random.choices(characters, k=12))
-    self.password_entry.delete(0,"end")
-    self.password_entry.insert(0, password)
+        if not characters:
+            self.password_entry.delete(0, "end")
+            self.password_entry.insert(0, "Selecione ao menos um critério")
+            return
 
-def copy_password(self):
-    # Copiar senha para a área de transferência
-    self.clipboard_clear()
-    self.clipboard_append(self.password_entry.get())
-    self.password_entry.delete(0, "end")
-    self.password_entry.insert(0, "Senha copiada!")
+        # Gerar senha aleatória
+        password = "".join(random.choices(characters, k=12))
+        self.password_entry.delete(0, "end")
+        self.password_entry.insert(0, password)
 
-def toggle_theme(self):
-    current_mode = ctk.get_appearance_mode()
-    new_mode = "Light" if current_mode == "Dark" else "Dark"
-    ctk.set_appearance_mode(new_mode)
+    def copy_password(self):
+        # Copiar senha para a área de transferência
+        self.clipboard_clear()
+        self.clipboard_append(self.password_entry.get())
+        self.password_entry.delete(0, "end")
+        self.password_entry.insert(0, "Senha copiada!")
 
-if __name__==" __main__":
+    def toggle_theme(self):
+        current_mode = ctk.get_appearance_mode()
+        new_mode = "Light" if current_mode == "Dark" else "Dark"
+        ctk.set_appearance_mode(new_mode)
+
+if __name__ == "__main__":
     app = PasswordGeneratorApp()
     app.mainloop()
