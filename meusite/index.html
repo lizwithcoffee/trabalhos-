@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio - Luize Weschenfelder Araujo</title>
+    <script src="js/script.js" defer></script>
+    <body>
+        <header id="header"></header>
+        <main id="main-content"></main>
+        <footer id="footer"></footer>
+    </body>
+    <link rel="stylesheet" href="css/styles.css"> <!-- Link para o arquivo CSS -->
+    <style>
+        /* Estilo para as imagens da chuva */
+        .chuva {
+            position: absolute;
+            width: 50px; /* Tamanho da imagem */
+            height: 50px;
+            animation: cair 5s linear infinite;
+            z-index: 1000; /* Aparece acima do conteúdo */
+            pointer-events: none; /* Para não interferir na interação com outros elementos */
+        }
+
+        /* Animação da chuva */
+        @keyframes cair {
+            from {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            to {
+                transform: translateY(100vh);
+                opacity: 0.5; /* Fica mais transparente ao cair */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="container">
+            <h1>Luize Weschenfelder Araujo</h1>
+                <ul class="menu">
+                    <li><a href="#sobre">Sobre Mim</a></li>
+                    <li><a href="#habilidades">Habilidades</a></li>
+                    <li><a href="#formacao">Formação</a></li>
+                    <li><a href="#experiencia">Experiência e Projetos</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                    <li><a href="https://github.com/lizwithcoffee" target="_blank">GitHub</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Seção Sobre Mim -->
+    <section id="sobre" class="section">
+        <div class="container">
+            <h2>Sobre Mim</h2>
+            <div class="foto-container">
+                <img src="img/eu.png" alt="Luize Weschenfelder Araujo" class="foto">
+            </div>
+            <p>Sou uma desenvolvedora apaixonada por aprender técnicas novas para aperfeiçoar meus trabalhos! </p>
+        </div>
+    </section>
+
+    <!-- Seção Habilidades -->
+    <section id="habilidades" class="section">
+        <div class="container">
+            <h2>Habilidades</h2>
+            <ul>
+                <li>HTML e CSS</li>
+                <li>JavaScript Básico</li>
+                <li>Python</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Seção Formação Acadêmica -->
+    <section id="formacao" class="section">
+        <div class="container">
+            <h2>Formação Acadêmica</h2>
+            <p><strong>Cursando o Ensino Médio</strong> - Colégio Estadual Dr Wolfram Metzler</p>
+            <p><strong>Cursando Lógica de Programação e Desenvolvimento Front End</strong> - Senac Novo Hamburgo </p>
+            <p><strong>Cursando Inglês</strong> - CNA Novo Hamburgo </p>
+        </div>
+    </section>
+
+    <!-- Seção Experiência e Projetos -->
+    <section id="experiencia" class="section">
+        <div class="container">
+            <h2>Experiência e Projetos</h2>
+            <p><strong>Desenvolvimento de Website Pessoal</strong> - Criação de um portfólio currículo utilizando HTML,CSS e JavaScript.</p>
+        </div>
+    </section>
+
+    <!-- Seção Contato -->
+    <section id="contato" class="section">
+        <div class="container">
+            <h2>Contato</h2>
+            <p>Caso seja de seu interesse, me contate via email!</p>
+            <p>Email: <a href="mailto:luizewaraujo@gmail.com">luizewaraujo@gmail.com</a></p>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Luize Weschenfelder Araujo. Todos os direitos reservados.</p>
+            <p><a href="https://github.com/lizwithcoffee" target="_blank">Visite meu GitHub</a></p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const body = document.querySelector('body');
+            
+            // Função para criar as imagens "caindo"
+            function criarChuva() {
+                const img = document.createElement('img');
+                img.src = 'img/hellok.png'; // Caminho para a imagem
+                img.className = 'chuva';
+                
+                // Posição inicial aleatória no topo
+                img.style.left = Math.random() * window.innerWidth + 'px';
+                img.style.top = '-100px';
+                
+                // Adiciona ao body
+                body.appendChild(img);
+                
+                // Define a animação
+                setTimeout(() => {
+                    img.remove(); // Remove a imagem quando sair da tela
+                }, 5000); // Remove após 5 segundos
+            }
+
+            // Cria imagens continuamente
+            setInterval(criarChuva, 200); // A cada 200ms cria uma nova
+        });
+    </script>
+</body>
+</html>

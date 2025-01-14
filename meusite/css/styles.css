@@ -1,0 +1,151 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo da página */
+body {
+    font-family: 'Comic Sans MS', 'Times New Roman', cursive;
+    background: url('img/hellok.png') pink;
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-size: auto;
+    color: black;
+    line-height: 1.6;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #ff99cc;
+    color: black;
+    padding: 20px 0;
+    border: 2px solid #ff66b2;
+    border-radius: 10px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    text-shadow: 2px 2px #ff66b2;
+}
+
+header .slogan {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #333;
+}
+
+/* Menu de navegação */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #000;
+    text-decoration: none;
+    font-size: 1.1rem;
+    background-color: #ffe6f2;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #ff66b2;
+}
+
+/* Seções */
+section {
+    padding: 40px 20px;
+    margin: 20px 0;
+    background-color: #ffe6f2;
+    border: 2px dashed #ff66b2;
+    border-radius: 10px;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #ff0080;
+    text-align: center;
+}
+
+/* Parágrafos e listas */
+section p, section ul, section li {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+/* Rodapé */
+footer {
+    background-color: #ff99cc;
+    color: black;
+    padding: 10px 0;
+    text-align: center;
+    border-top: 2px solid #ff66b2;
+}
+
+/* Links */
+a {
+    color: #ff0080;
+    text-decoration: none;
+}
+
+/* Estilo para as imagens da chuva */
+.chuva {
+    position: absolute;
+    width: 50px; /* Tamanho da imagem */
+    height: 50px;
+    animation: cair 5s linear infinite;
+    z-index: 1000; /* Aparece acima do conteúdo */
+    pointer-events: none; /* Para não interferir na interação com outros elementos */
+}
+
+/* Animação da chuva */
+@keyframes cair {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(100vh);
+        opacity: 0.5; /* Fica mais transparente ao cair */
+    }
+}
+
+/* Centralizar a foto de perfil */
+.foto-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* Espaçamento opcional acima */
+}
+
+.foto {
+    border-radius: 50%; /* Deixa a imagem redonda, opcional */
+    border: 3px solid #ff66b2; /* Borda opcional */
+    max-width: 200px; /* Limita o tamanho da imagem */
+    height: auto;
+}
+
+/* Centralizar o título, subtítulo e texto na seção "Sobre Mim" */
+#sobre h2, 
+#sobre p {
+    text-align: center;
+}
+
+#sobre .foto-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* Espaçamento opcional */
+}
