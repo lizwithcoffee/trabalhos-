@@ -12,6 +12,25 @@
     </body>
     <link rel="stylesheet" href="css/styles.css"> <!-- Link para o arquivo CSS -->
     <style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo da página */
+body {
+    font-family: 'Comic Sans MS', 'Times New Roman', cursive;
+    background: url('img/hellohello.png');
+    background-image: url('img/images.jpg');
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-size: auto;
+    color: black;
+    line-height: 1.6;
+}
+
         /* Estilo para as imagens da chuva */
         .chuva {
             position: absolute;
@@ -117,7 +136,7 @@
             // Função para criar as imagens "caindo"
             function criarChuva() {
                 const img = document.createElement('img');
-                img.src = 'img/hellok.png'; // Caminho para a imagem
+                img.src = 'img/hellohello.png'; // Caminho para a imagem
                 img.className = 'chuva';
                 
                 // Posição inicial aleatória no topo

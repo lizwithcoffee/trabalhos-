@@ -8,7 +8,8 @@
 /* Corpo da página */
 body {
     font-family: 'Comic Sans MS', 'Times New Roman', cursive;
-    background: url('img/hellok.png') pink;
+    background: url('img/hellohello.png');
+    background-image: url('img/');
     background-repeat: repeat;
     background-attachment: fixed;
     background-size: auto;
@@ -18,34 +19,36 @@ body {
 
 /* Cabeçalho */
 header {
-    background-color: #ff99cc;
+    background-color:#b52c2d;
     color: black;
     padding: 20px 0;
-    border: 2px solid #ff66b2;
+    border: 2px solid black;
     border-radius: 10px;
+    text-align: center; /* Centraliza todo o conteúdo do cabeçalho */
 }
 
 header h1 {
     font-size: 2.5rem;
-    text-shadow: 2px 2px #ff66b2;
-}
-
-header .slogan {
-    font-size: 1.2rem;
-    font-style: italic;
-    color: #333;
+    text-shadow: 2px 2px black;
+    margin-bottom: 10px; /* Espaçamento entre o título e os links */
+    color: #a10e0e; /* Define o texto como branco */
 }
 
 /* Menu de navegação */
+nav {
+    margin-top: 10px; /* Espaçamento opcional acima do menu */
+}
+
 nav ul {
     list-style: none;
-    display: flex;
+    display: inline-flex; /* Alinha os itens na horizontal */
     justify-content: center;
-    padding: 10px;
+    padding: 0; /* Remove espaçamento interno */
+    gap: 15px; /* Espaçamento entre os itens do menu */
 }
 
 nav ul li {
-    margin-right: 20px;
+    margin: 0; /* Remove margens extras */
 }
 
 nav ul li a {
@@ -55,29 +58,35 @@ nav ul li a {
     background-color: #ffe6f2;
     padding: 5px 10px;
     border-radius: 5px;
-    border: 1px solid #ff66b2;
+    border: 1px solid black;
+    transition: background-color 0.3s ease; /* Animação para hover */
+}
+
+nav ul li a:hover {
+    background-color: black; /* Cor ao passar o mouse */
+    color: white;
 }
 
 /* Seções */
 section {
     padding: 40px 20px;
     margin: 20px 0;
-    background-color: #ffe6f2;
-    border: 2px dashed #ff66b2;
+    background-color: white;
+    border: 2px dashed #db5151;
     border-radius: 10px;
 }
 
 h2 {
     font-size: 2.5rem;
     margin-bottom: 15px;
-    color: #ff0080;
+    color: #d3999a;
     text-align: center;
 }
 
 /* Parágrafos e listas */
 section p, section ul, section li {
     font-size: 1.2rem;
-    color: #333;
+    color: black;
 }
 
 ul {
@@ -87,16 +96,16 @@ ul {
 
 /* Rodapé */
 footer {
-    background-color: #ff99cc;
+    background-color: #b52c2d;
     color: black;
     padding: 10px 0;
     text-align: center;
-    border-top: 2px solid #ff66b2;
+    border-top: 2px solid black;
 }
 
 /* Links */
 a {
-    color: #ff0080;
+    color: black;
     text-decoration: none;
 }
 
@@ -132,7 +141,7 @@ a {
 
 .foto {
     border-radius: 50%; /* Deixa a imagem redonda, opcional */
-    border: 3px solid #ff66b2; /* Borda opcional */
+    border: 3px solid black; /* Borda opcional */
     max-width: 200px; /* Limita o tamanho da imagem */
     height: auto;
 }
@@ -148,4 +157,31 @@ a {
     justify-content: center;
     align-items: center;
     margin-top: 20px; /* Espaçamento opcional */
+}
+
+/* Ajuste para seções grandes */
+.section {
+    width: 80%; /* Reduz a largura para 80% da tela */
+    max-width: 800px; /* Define um limite máximo de largura */
+    margin: 20px auto; /* Centraliza horizontalmente com margem superior/inferior */
+    padding: 20px; /* Define um espaçamento interno menor */
+    background-color: #b85959; /* Fundo branco */
+    border: 2px dashed black; /* Borda rosa */
+    border-radius: 10px; /* Adiciona cantos arredondados */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona sombra */
+}
+
+/* Centralizando texto dentro das seções */
+.section .container {
+    text-align: center; /* Alinha o texto ao centro */
+}
+
+/* Ajustando listas para melhor espaçamento */
+.section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.section ul li {
+    margin-bottom: 10px;
 }
