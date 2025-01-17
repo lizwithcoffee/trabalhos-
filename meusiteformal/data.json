@@ -1,0 +1,49 @@
+{
+    "header": {
+      "title": "Luize Weschenfelder Araujo",
+      "menu": [
+        { "text": "Sobre Mim", "link": "#sobre" },
+        { "text": "Habilidades", "link": "#habilidades" },
+        { "text": "Formação", "link": "#formacao" },
+        { "text": "Experiência e Projetos", "link": "#experiencia" },
+        { "text": "Contato", "link": "#contato" },
+        { "text": "GitHub", "link": "https://github.com/lizwithcoffee", "target": "_blank" }
+      ]
+    },
+    "sections": {
+      "sobre": {
+        "title": "Sobre Mim",
+        "image": "img/eu.png",
+        "description": "Sou uma desenvolvedora apaixonada por aprender técnicas novas para aperfeiçoar meus trabalhos!"
+      },
+      "habilidades": {
+        "title": "Habilidades",
+        "items": ["HTML e CSS", "JavaScript Básico", "Python"]
+      },
+      "formacao": {
+        "title": "Formação Acadêmica",
+        "items": [
+          "Cursando o Ensino Médio - Colégio Estadual Dr Wolfram Metzler",
+          "Cursando Lógica de Programação e Desenvolvimento Front End - Senac Novo Hamburgo",
+          "Cursando Inglês - CNA Novo Hamburgo"
+        ]
+      },
+      "experiencia": {
+        "title": "Experiência e Projetos",
+        "items": [
+          "Desenvolvimento de Website Pessoal - Criação de um portfólio currículo utilizando HTML, CSS e JavaScript."
+        ]
+      },
+      "contato": {
+        "title": "Contato",
+        "description": "Caso seja de seu interesse, me contate via email!",
+        "email": "luizewaraujo@gmail.com"
+      }
+    },
+    "footer": {
+      "text": "&copy; 2025 Luize Weschenfelder Araujo. Todos os direitos reservados.",
+      "githubText": "Visite meu GitHub",
+      "githubLink": "https://github.com/lizwithcoffee"
+    }
+  }
+  

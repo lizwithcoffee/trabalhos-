@@ -1,0 +1,186 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo da página */
+body {
+    font-family: 'Comic Sans MS', 'Times New Roman', cursive;
+    background-color: #727272;
+    background-size: auto;
+    color: black;
+    line-height: 1.6;
+}
+
+/* Cabeçalho */
+header {
+    background-color:#535353;
+    color: black;
+    padding: 20px 0;
+    border: 2px solid black;
+    border-radius: 10px;
+    text-align: center; /* Centraliza todo o conteúdo do cabeçalho */
+}
+
+header h1 {
+    font-size: 2.5rem;
+    text-shadow: 2px 2px black;
+    margin-bottom: 10px; /* Espaçamento entre o título e os links */
+    color: #d8d8d8; /* Define o texto como branco */
+}
+
+/* Menu de navegação */
+nav {
+    margin-top: 10px; /* Espaçamento opcional acima do menu */
+}
+
+nav ul {
+    list-style: none;
+    display: inline-flex; /* Alinha os itens na horizontal */
+    justify-content: center;
+    padding: 0; /* Remove espaçamento interno */
+    gap: 15px; /* Espaçamento entre os itens do menu */
+}
+
+nav ul li {
+    margin: 0; /* Remove margens extras */
+}
+
+nav ul li a {
+    color: #000;
+    text-decoration: none;
+    font-size: 1.1rem;
+    background-color: #ffe6f2;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid black;
+    transition: background-color 0.3s ease; /* Animação para hover */
+}
+
+nav ul li a:hover {
+    background-color: black; /* Cor ao passar o mouse */
+    color: white;
+}
+
+/* Seções */
+section {
+    padding: 40px 20px;
+    margin: 20px 0;
+    background-color: white;
+    border: 2px dashed #a5a5a5;
+    border-radius: 10px;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #454545;
+    text-align: center;
+}
+
+/* Parágrafos e listas */
+section p, section ul, section li {
+    font-size: 1.2rem;
+    color: black;
+}
+
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+/* Rodapé */
+footer {
+    background-color: #535353;
+    color: black;
+    padding: 10px 0;
+    text-align: center;
+    border-top: 2px solid black;
+}
+
+/* Links */
+a {
+    color: black;
+    text-decoration: none;
+}
+
+/* Estilo para as imagens da chuva */
+.chuva {
+    position: absolute;
+    width: 50px; /* Tamanho da imagem */
+    height: 50px;
+    animation: cair 5s linear infinite;
+    z-index: 1000; /* Aparece acima do conteúdo */
+    pointer-events: none; /* Para não interferir na interação com outros elementos */
+}
+
+/* Animação da chuva */
+@keyframes cair {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(100vh);
+        opacity: 0.5; /* Fica mais transparente ao cair */
+    }
+}
+
+/* Centralizar a foto de perfil */
+.foto-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* Espaçamento opcional acima */
+}
+
+.foto {
+    border-radius: 50%; /* Deixa a imagem redonda, opcional */
+    border: 3px solid black; /* Borda opcional */
+    max-width: 200px; /* Limita o tamanho da imagem */
+    height: auto;
+}
+
+/* Centralizar o título, subtítulo e texto na seção "Sobre Mim" */
+#sobre h2, 
+#sobre p {
+    text-align: center;
+}
+
+#sobre .foto-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* Espaçamento opcional */
+}
+
+/* Ajuste para seções grandes */
+.section {
+    width: 80%; /* Reduz a largura para 80% da tela */
+    max-width: 800px; /* Define um limite máximo de largura */
+    margin: 20px auto; /* Centraliza horizontalmente com margem superior/inferior */
+    padding: 20px; /* Define um espaçamento interno menor */
+    background-color: #a5a5a5; /* Fundo branco */
+    border: 2px dashed black; /* Borda rosa */
+    border-radius: 10px; /* Adiciona cantos arredondados */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona sombra */
+}
+
+/* Centralizando texto dentro das seções */
+.section .container {
+    text-align: center; /* Alinha o texto ao centro */
+}
+
+/* Ajustando listas para melhor espaçamento */
+.section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.section ul li {
+    margin-bottom: 10px;
+}
+
+
