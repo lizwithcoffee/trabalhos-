@@ -5,11 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfólio - Luize Weschenfelder Araujo</title>
     <script src="js/script.js" defer></script>
-    <body>
-        <header id="header"></header>
-        <main id="main-content"></main>
-        <footer id="footer"></footer>
-    </body>
     <link rel="stylesheet" href="css/styles.css"> <!-- Link para o arquivo CSS -->
     <style>
 
@@ -31,27 +26,27 @@ body {
     line-height: 1.6;
 }
 
-        /* Estilo para as imagens da chuva */
-        .chuva {
-            position: absolute;
-            width: 50px; /* Tamanho da imagem */
-            height: 50px;
-            animation: cair 5s linear infinite;
-            z-index: 1000; /* Aparece acima do conteúdo */
-            pointer-events: none; /* Para não interferir na interação com outros elementos */
-        }
+/* Estilo para as imagens da chuva */
+.chuva {
+    position: absolute;
+    width: 50px; /* Tamanho da imagem */
+    height: 50px;
+    animation: cair 5s linear infinite;
+    z-index: 1000; /* Aparece acima do conteúdo */
+    pointer-events: none; /* Para não interferir na interação com outros elementos */
+}
 
-        /* Animação da chuva */
-        @keyframes cair {
-            from {
-                transform: translateY(0);
-                opacity: 1;
-            }
-            to {
-                transform: translateY(100vh);
-                opacity: 0.5; /* Fica mais transparente ao cair */
-            }
-        }
+/* Animação da chuva */
+@keyframes cair {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(100vh);
+        opacity: 0.5; /* Fica mais transparente ao cair */
+    }
+}
     </style>
 </head>
 <body>
@@ -59,15 +54,14 @@ body {
     <header>
         <div class="container">
             <h1>Luize Weschenfelder Araujo</h1>
-                <ul class="menu">
-                    <li><a href="#sobre">Sobre Mim</a></li>
-                    <li><a href="#habilidades">Habilidades</a></li>
-                    <li><a href="#formacao">Formação</a></li>
-                    <li><a href="#experiencia">Experiência e Projetos</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                    <li><a href="https://github.com/lizwithcoffee" target="_blank">GitHub</a></li>
-                </ul>
-            </nav>
+            <ul class="menu">
+                <li><a href="#sobre">Sobre Mim</a></li>
+                <li><a href="#habilidades">Habilidades</a></li>
+                <li><a href="#formacao">Formação</a></li>
+                <li><a href="#experiencia">Experiência e Projetos</a></li>
+                <li><a href="#contato">Contato</a></li>
+                <li><a href="https://github.com/lizwithcoffee" target="_blank">GitHub</a></li>
+            </ul>
         </div>
     </header>
 
@@ -78,7 +72,7 @@ body {
             <div class="foto-container">
                 <img src="img/eu.png" alt="Luize Weschenfelder Araujo" class="foto">
             </div>
-            <p>Sou uma desenvolvedora apaixonada por aprender técnicas novas para aperfeiçoar meus trabalhos! </p>
+            <p>Sou uma desenvolvedora apaixonada por aprender técnicas novas para aperfeiçoar meus trabalhos!</p>
         </div>
     </section>
 
@@ -99,8 +93,8 @@ body {
         <div class="container">
             <h2>Formação Acadêmica</h2>
             <p><strong>Cursando o Ensino Médio</strong> - Colégio Estadual Dr Wolfram Metzler</p>
-            <p><strong>Curso de Lógica de Programação e Desenvolvimento Front End (2025)</strong> - Senac Novo Hamburgo </p>
-            <p><strong>Cursando Inglês</strong> - CNA Novo Hamburgo </p>
+            <p><strong>Curso de Lógica de Programação e Desenvolvimento Front End (2025)</strong> - Senac Novo Hamburgo</p>
+            <p><strong>Cursando Inglês</strong> - CNA Novo Hamburgo</p>
         </div>
     </section>
 
@@ -108,7 +102,7 @@ body {
     <section id="experiencia" class="section">
         <div class="container">
             <h2>Experiência e Projetos</h2>
-            <p><strong>Desenvolvimento de Website Pessoal</strong> - Criação de um portfólio currículo utilizando HTML,CSS e JavaScript.</p>
+            <p><strong>Desenvolvimento de Website Pessoal</strong> - Criação de um portfólio currículo utilizando HTML, CSS e JavaScript.</p>
         </div>
     </section>
 
@@ -122,16 +116,19 @@ body {
     </section>
 
     <!-- Rodapé -->
-    <footer>
+    <footer id="footer">
         <div class="container">
             <p>&copy; 2025 Luize Weschenfelder Araujo. Todos os direitos reservados.</p>
             <p><a href="https://github.com/lizwithcoffee" target="_blank">Visite meu GitHub</a></p>
+            <p id="contador">Visitantes: 0</p>
+            <p id="data-hora"></p> <!-- Local onde a data e hora serão exibidas -->
         </div>
     </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const body = document.querySelector('body');
+            const contadorElement = document.getElementById('contador');
             
             // Função para criar as imagens "caindo"
             function criarChuva() {
@@ -154,6 +151,25 @@ body {
 
             // Cria imagens continuamente
             setInterval(criarChuva, 200); // A cada 200ms cria uma nova
+
+            // Atualiza a data e hora
+            function exibirDataHora() {
+                const agora = new Date();
+                const dataHora = agora.toLocaleString(); // Data e hora no formato local
+                document.getElementById('data-hora').innerText = `Data e Hora: ${dataHora}`;
+            }
+            
+            // Exibir a data e hora a cada segundo
+            setInterval(exibirDataHora, 1000);
+
+            // Contador de visitantes
+            let visitantes = localStorage.getItem('visitantes');
+            if (!visitantes) {
+                visitantes = 0; // Se não existir o contador, inicia com 0
+            }
+            visitantes = parseInt(visitantes) + 1; // Incrementa o contador
+            localStorage.setItem('visitantes', visitantes); // Armazena novamente no localStorage
+            contadorElement.innerText = `Visitantes: ${visitantes}`; // Exibe o contador
         });
     </script>
 </body>

@@ -5,28 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfólio - Luize Weschenfelder Araujo</title>
     <script src="js/script.js" defer></script>
-    <body>
-        <header id="header"></header>
-        <main id="main-content"></main>
-        <footer id="footer"></footer>
-    </body>
     <link rel="stylesheet" href="css/styles.css"> <!-- Link para o arquivo CSS -->
-
 </head>
 <body>
     <!-- Cabeçalho -->
     <header>
         <div class="container">
             <h1>Luize Weschenfelder Araujo</h1>
-                <ul class="menu">
-                    <li><a href="#sobre">Sobre Mim</a></li>
-                    <li><a href="#habilidades">Habilidades</a></li>
-                    <li><a href="#formacao">Formação</a></li>
-                    <li><a href="#experiencia">Experiência e Projetos</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                    <li><a href="https://github.com/lizwithcoffee" target="_blank">GitHub</a></li>
-                </ul>
-            </nav>
+            <ul class="menu">
+                <li><a href="#sobre">Sobre Mim</a></li>
+                <li><a href="#habilidades">Habilidades</a></li>
+                <li><a href="#formacao">Formação</a></li>
+                <li><a href="#experiencia">Experiência e Projetos</a></li>
+                <li><a href="#contato">Contato</a></li>
+                <li><a href="https://github.com/lizwithcoffee" target="_blank">GitHub</a></li>
+            </ul>
         </div>
     </header>
 
@@ -85,7 +78,36 @@
         <div class="container">
             <p>&copy; 2025 Luize Weschenfelder Araujo. Todos os direitos reservados.</p>
             <p><a href="https://github.com/lizwithcoffee" target="_blank">Visite meu GitHub</a></p>
+            <p id="contador">Visitantes: 0</p>
+            <p id="data-hora"></p> <!-- Local onde a data e hora serão exibidas -->
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const body = document.querySelector('body');
+            const contadorElement = document.getElementById('contador');
+            const dataHoraElement = document.getElementById('data-hora');
+            
+            // Atualiza a data e hora
+            function exibirDataHora() {
+                const agora = new Date();
+                const dataHora = agora.toLocaleString(); // Data e hora no formato local
+                dataHoraElement.innerText = `Data e Hora: ${dataHora}`;
+            }
+
+            // Exibir a data e hora a cada segundo
+            setInterval(exibirDataHora, 1000);
+
+            // Contador de visitantes
+            let visitantes = localStorage.getItem('visitantes');
+            if (!visitantes) {
+                visitantes = 0; // Se não existir o contador, inicia com 0
+            }
+            visitantes = parseInt(visitantes) + 1; // Incrementa o contador
+            localStorage.setItem('visitantes', visitantes); // Armazena novamente no localStorage
+            contadorElement.innerText = `Visitantes: ${visitantes}`; // Exibe o contador
+        });
+    </script>
 </body>
 </html>
